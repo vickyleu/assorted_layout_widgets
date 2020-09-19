@@ -1239,6 +1239,13 @@ class RenderParagraphX extends RenderBox
     ));
     properties.add(IntProperty('maxLines', maxLines, ifNull: 'unlimited'));
   }
+
+  @override
+  double getFullHeightForCaret(TextPosition position) {
+    assert(!debugNeedsLayout);
+    _layoutTextWithConstraints(constraints);
+    return _textPainter.getFullHeightForCaret(position, Rect.zero);
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
