@@ -177,7 +177,7 @@ class RichTextX extends RichText {
       maxLines: maxLines,
       strutStyle: strutStyle,
       textWidthBasis: textWidthBasis,
-      locale: locale ?? Localizations.localeOf(context, nullOk: true),
+      locale: locale ?? Localizations.maybeLocaleOf(context),
     );
   }
 
@@ -194,7 +194,7 @@ class RichTextX extends RichText {
       ..maxLines = maxLines
       ..strutStyle = strutStyle
       ..textWidthBasis = textWidthBasis
-      ..locale = locale ?? Localizations.localeOf(context, nullOk: true);
+      ..locale = locale ?? Localizations.maybeLocaleOf(context);
   }
 }
 
